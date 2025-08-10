@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Công thức thu nhập</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+</head>
+<body>
+  <div class="form-container">
+    <h1>Công Thức Thu Nhập</h1>
+    <form method="post" action="/">
+      <div class="input-group">
+        <input type="number" step="any" name="a_str" placeholder="a (người phục vụ)">
+        <input type="number" step="any" name="b_str" placeholder="b (giá sản phẩm)">
+      </div>
+      <div class="input-group">
+        <input type="number" step="any" name="c_str" placeholder="c (số lần)">
+        <input type="number" step="any" name="f_str" placeholder="f (thu nhập)">
+      </div>
+      <button type="submit">Tính</button>
+    </form>
+    <div class="result">
+      {% if formula %}
+        <p class="formula">{{ formula }}</p>
+      {% endif %}
+      {% if message %}
+        <p class="message">{{ message }}</p>
+      {% endif %}
+    </div>
+  </div>
+</body>
+</html>
